@@ -1,0 +1,255 @@
+<h3> Component 3 </h3>
+
+{{result1}}
+
+<br><br>
+
+result2: {{result2}}
+
+<br><br>
+
+add: {{result3}}
+
+<br><br>
+
+add: {{result4}}
+
+<br><br>
+
+mul: {{result5}}
+
+<br><br>
+
+area: {{result6}}
+
+<br><br>
+
+perimeter: {{result7}}
+
+<br><br>
+@if(result8) {
+    <p style="color: blue;">Sản phẩm tồn tại</p>
+} @else {
+    <p style="color: red;">Sản phẩm ko tồn tại</p>
+}
+
+<br><br>
+count By Status: {{result9}}
+
+<br><br>
+<h3>Product Info</h3>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>{{product.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{product.status ? 'show' : 'hide'}}</td>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td>
+            <img src="images/{{product.photo}}" width="120" height="120"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            {{product.price * product.quantity}}
+        </td>
+    </tr>
+</table>
+<br>
+
+<h3>Products</h3>
+<table border="1">
+    @for(product of products; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>
+
+<h3>Products By Status</h3>
+<table border="1">
+    @for(product of productStatus; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>
+
+<h3>Products By Price</h3>
+<table border="1">
+    @for(product of productPrices; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>
+
+<h3>Products By Keyword</h3>
+<table border="1">
+    @for(product of productByKeyword; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>
+
+<h3>Products By Limit</h3>
+<table border="1">
+    @for(product of productLimit; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>
+
+<h3>Products By Limit 2</h3>
+<table border="1">
+    @for(product of productLimit2; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <img src="images/{{product.photo}}" width="120" height="120"/>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>

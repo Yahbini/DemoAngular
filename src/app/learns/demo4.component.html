@@ -1,0 +1,45 @@
+<h3>Click Event</h3>
+<button type="button" (click)="hello()">Click Me!</button>
+
+<br><br>
+
+<button type="button" value="white" (click)="changeBg($event)">White</button>&nbsp;
+<button type="button" value="red" (click)="changeBg($event)">Red</button>&nbsp;
+<button type="button" value="blue" (click)="changeBg($event)">Blue</button>&nbsp;
+<button type="button" value="orange" (click)="changeBg($event)">Orange</button>&nbsp;
+
+<br><br>
+
+<button type="button" value="100*120" (click)="resize($event)">100*120</button>&nbsp;
+<button type="button" value="200*220" (click)="resize($event)">200*220</button>&nbsp;
+<button type="button" value="300*320" (click)="resize($event)">300*320</button>&nbsp;
+
+<br><br>
+
+<img src="{{photo}}" alt="" width="{{width}}" height="{{height}}">
+
+<br><br>
+
+<img src="images/a.png" alt="" width="100" height="100" (click)="changePhoto($event)">
+<img src="images/b.png" alt="" width="100" height="100" (click)="changePhoto($event)">
+<img src="images/c.png" alt="" width="100" height="100" (click)="changePhoto($event)">
+
+<br><br>
+A: <input type="text" [(ngModel)]="a"> &nbsp; 
+<button type="button" (click)="calculate()">Calculate</button>
+<br>
+Area: {{area}}
+<br>
+Perimeter: {{perimeter}}
+
+<br><br>
+
+username <input type="text"> <br>
+password <input type="text"> <br><br>
+<button type="button" (click)="login()">Save</button> &nbsp;
+<button type="button" (click)="clear()">Clear</button>
+<br><br>
+
+{{msg}}
+
+

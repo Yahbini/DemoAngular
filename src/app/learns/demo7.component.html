@@ -1,0 +1,77 @@
+<h3>Register</h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" formControlName="username">
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" formControlName="password">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Description</td>
+            <td>
+                <textarea cols="20" rows="5" formControlName="description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Gender</td>
+            <td>
+                <input type="radio" value="male" formControlName="gender"> Male &nbsp;
+                <input type="radio" value="female" formControlName="gender"> Female
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Cert</td>
+            <td>
+                @for(cert of certs; track cert) {
+                    <input type="radio" value="{{cert.id}}" formControlName="certId"> {{cert.name}}
+                    <br>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Status</td>
+            <td>
+                <input type="checkbox" formControlName="status"> 
+               
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Role</td>
+            <td>
+                <select formControlName="roleId">
+                    @for(role of roles; track role) {
+                        <option value="{{role.id}}">{{role.name}}</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Address</td>
+            <td formGroupName="address">  <!-- phía dưới là con của group address -->
+               Street <input type="text" formControlName="street"> <br>
+               Ward <input type="text" formControlName="ward">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">&nbsp;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit">Save</button>
+                <input type="hidden" formControlName="id">
+            </td>
+        </tr>
+    </table>
+</form>

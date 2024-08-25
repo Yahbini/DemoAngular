@@ -1,0 +1,111 @@
+<h3>Register</h3>
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" formControlName="username">
+            </td>
+            <td>
+                @if(registerForm.get('username')?.touched) {
+                    <ul>
+                        @if(registerForm.hasError('required', ['username'])) {
+                            <li class="error">Username not blank</li>
+                        }
+                        @if(registerForm.hasError('minLength', ['username'])) {
+                            <li class="error">Username min 3 </li>
+                        }
+                        @if(registerForm.hasError('maxLength', ['username'])) {
+                            <li class="error">Username max 10 </li>
+                        }
+                        @if(registerForm.hasError('exist', ['username'])) {
+                            <li class="error">Username has been existed</li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="text" formControlName="password">
+            </td>
+            <td>
+                @if(registerForm.get('password')?.touched) {
+                    <ul>
+                        @if(registerForm.hasError('required', ['password'])) {
+                            <li class="error">Password must not be blank</li>
+                        }
+                        @if(registerForm.hasError('pattern', ['password'])) {
+                            <li class="error">Pattern ko đủ độ phức tạp</li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>
+                <input type="text" formControlName="age">
+            </td>
+            <td>
+                @if(registerForm.get('age')?.touched) {
+                    <ul>
+                        @if(registerForm.hasError('required', ['age'])) {
+                            <li class="error">Age must not be blank</li>
+                        }
+                        @if(registerForm.hasError('min', ['age'])) {
+                            <li class="error">Age Invalid(min 18)</li>
+                        }
+                        @if(registerForm.hasError('max', ['age'])) {
+                            <li class="error">Age Invalid(max 60)</li>
+                        }
+                        @if(registerForm.hasError('pattern', ['age'])) {
+                            <li class="error">Age Invalid(Please enter number)</li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" formControlName="email">
+            </td>
+            <td>
+                @if(registerForm.get('email')?.touched) {
+                    <ul>
+                        @if(registerForm.hasError('required', ['email'])) {
+                            <li class="error">Email must not be blank</li>
+                        }
+                        @if(registerForm.hasError('email', ['email'])) {
+                            <li class="error">Email Invalid</li>
+                        }
+                    </ul>
+                }
+                
+            </td>
+        </tr>
+        <tr>
+            <td>Website</td>
+            <td>
+                <input type="text" formControlName="website">
+            </td>
+            <td>
+                @if(registerForm.get('website')?.touched) {
+                    <ul>
+                        @if(registerForm.hasError('pattern', ['website'])) {
+                            <li class="error">Website Invalid</li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit" [disabled]="registerForm.invalid">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>

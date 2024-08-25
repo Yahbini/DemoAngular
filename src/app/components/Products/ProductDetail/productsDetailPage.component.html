@@ -1,0 +1,36 @@
+<h3>Product Info</h3>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>{{product.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{product.status ? 'show' : 'hide'}}</td>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td>
+            <img src="images/{{product.photo}}" width="120" height="120"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            {{product.price * product.quantity}}
+        </td>
+    </tr>
+</table>
+<br>

@@ -1,0 +1,92 @@
+<h3>Change</h3>
+
+Category <select (change)="selectCategory($event)">
+    <option value="1">Category 1</option>
+    <option value="2">Category 2</option>
+    <option value="3">Category 3</option>
+    <option value="4">Category 4</option>
+</select>
+
+Id: {{categoryId}}
+
+<br><br>
+
+Country <select (change)="selectCountry($event)">
+    <option value="a.png">Country 1</option>
+    <option value="b.png">Country 2</option>
+    <option value="c.png">Country 3</option>
+</select>
+<br><br>
+<img src="images/{{flag}}" alt="flag" width="100" height="100">
+
+<br><br>
+
+Products <select (change)="findProductDetail($event)">
+    @for(product of products; track product) {
+        <option value="{{product.id}}">{{product.name}}</option>
+    }
+</select>
+
+<br><br>
+
+<h3>Product Detail</h3>
+
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>{{product.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{product.status ? 'show' : 'hide'}}</td>
+    </tr>
+    <tr>
+        <td>Photo</td>
+        <td>
+            <img src="images/{{product.photo}}" width="120" height="120"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            {{product.price * product.quantity}}
+        </td>
+    </tr>
+</table>
+<br>
+
+Country <select (change)="findCountry($event)">
+    @for(country of countries; track country) {
+        <option value="{{country.id}}">{{country.name}}</option>
+    }
+</select>
+<br>
+City <select>
+    @for(city of cities; track city) {
+        <option value="{{city.id}}">{{city.name}}</option>
+    }
+</select>
+
+<br><br>
+@for(country of countries; track country) {
+    <input type="radio" value="{{country.id}}" name="country" (change)="findCountry($event)">{{country.name}}
+    <br>
+}
+
+<br><br>
+
+File <input type="file" (change) = "selectFile($event)">
+<br>
+Files <input type="file" (change) = "selectFiles($event)" multiple>

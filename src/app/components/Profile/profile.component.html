@@ -1,0 +1,36 @@
+<h2>Profile<h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="save()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" formControlName="username">
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" formControlName="password">
+            </td>
+        </tr>
+        <tr>
+            <td>Fullname</td>
+            <td>
+                <input type="text" formControlName="fullName">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">&nbsp;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>

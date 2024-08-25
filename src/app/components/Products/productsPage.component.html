@@ -1,0 +1,35 @@
+<h3>Product List</h3>
+<table border="1">
+    @for(product of products; track product) {
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Status</td>
+            <td>Photo</td>
+            <td>Total</td>
+        </tr>
+        <tr>
+            
+            <td>{{product.id}}</td>
+            <td>
+                <a [routerLink]="['/product-details', {id: product.id}]">
+                    {{product.name}}
+                </a>
+            </td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status ? 'show' : 'hide'}}</td>
+            <td>
+                <a [routerLink]="['/product-details', {id: product.id}]">
+                    <img src="images/{{product.photo}}" width="120" height="120"/>
+                </a>
+            </td>
+            <td>
+                {{product.price * product.quantity}}
+            </td>
+        </tr>       
+    }
+
+</table>

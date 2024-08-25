@@ -1,0 +1,10 @@
+<h3>News</h3>
+<child-component [id]="123" [title]="title" details="{{'aaaa'}}"></child-component>
+<br>
+<child2-component (updateFullname)="getDataFromChild($event)" updateCalculate="getCalculateFromChild($event)"></child2-component>
+<br>
+Result: {{result}}
+<br>
+Area: {{result2.area}}
+<br>
+Perimeter: {{result2.perimeter}}

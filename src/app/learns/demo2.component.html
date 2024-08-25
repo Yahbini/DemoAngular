@@ -1,0 +1,37 @@
+<h3> Component 2 </h3>
+
+Fullname <input type="text" [(ngModel)] = "fullName">
+<br>
+{{fullName}}
+
+<br><br>
+
+<input type="radio" value="male" [(ngModel)] = "gender"> Male
+<input type="radio" value="female" [(ngModel)] = "gender" > Female
+{{gender}}
+
+<br><br>
+
+<input type="checkbox" [(ngModel)]="status"> status
+{{status}}
+
+<br><br>
+
+Category
+<select [(ngModel)]="categoryId">
+    <option value="1">Category 1</option>
+    <option value="2">Category 2</option>
+    <option value="3">Category 3</option>
+    <option value="4">Category 4</option>
+</select>
+ID: {{categoryId}}
+
+<br><br>
+
+Category 2
+<select [(ngModel)]="categoryId2">
+    @for(category of categories; track category) {
+        <option value="{{category.id}}">{{category.name}}</option>
+    }
+</select>
+ID: {{categoryId2}}
