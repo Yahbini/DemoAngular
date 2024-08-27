@@ -1,0 +1,41 @@
+<h3>Product List </h3>
+
+@if(products != null) {
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Created</th>
+        <th>Photo</th>
+        <th>CategoryId</th>
+        <th>CategoryName</th>
+
+    </tr>
+    @for(product of products; track product) {
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.status}}</td>
+        <td>{{product.created}}</td>
+        <td>
+            <img 
+                *ngIf="product.photo" 
+                [src]="'images/' + (product.photo.split('/').pop())" 
+                width="120" height="120"
+            />
+        </td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.categoryName}}</td>
+
+    </tr>
+    }
+
+</table>
+}

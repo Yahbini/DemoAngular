@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { ProductService } from "../services/product.service";
 import { CountryService } from "../services/country.service";
 import { Product } from "../entities/product.entity";
 import { Country } from "../entities/country.entity";
 import { City } from "../entities/city.entity";
+import { ProductService } from "../services/product.service";
 
 @Component({
     selector: 'app-root',

@@ -1,7 +1,7 @@
 <a [routerLink]="['/home']">Home</a> | 
 <a [routerLink]="['/about-us']">About Us</a> |
-<a [routerLink]="['/news']">News</a> | 
-<a [routerLink]="['/news-details', {id: 123, username: 'acc1'}]">News Page</a> | 
+<a [routerLink]="['/news']">News Page</a> | 
+<a [routerLink]="['/news-details', {id: 123, username: 'acc1'}]">News Details</a> | 
 <a [routerLink]="['/products']">Products</a> | 
 @if(ls.getItem('username') == null) {
     <a [routerLink]="['/login']">Login</a> | 
@@ -11,6 +11,10 @@
 
 <a [routerLink]="['/contact']">Contact</a> | 
 <a [routerLink]="['/invoice']">Invoice</a> | 
+<a [routerLink]="['/category-list']">Category</a> | 
+<a [routerLink]="['/product-list']">Product</a> | 
+
+
 
 
 

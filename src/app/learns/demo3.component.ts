@@ -3,8 +3,8 @@ import { FormsModule } from "@angular/forms";
 import { DemoService } from "../services/demo.service";
 import { CalculateService } from "../services/calculate.service";
 import { RectangleService } from "../services/rectangle.service";
-import { ProductService } from "../services/product.service";
 import { Product } from "../entities/product.entity";
+import { ProductService } from "../services/product.service";
 
 
 @Component({

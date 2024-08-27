@@ -13,6 +13,8 @@ import { Contact1Component } from './components/Contact/contact1.component';
 import { Contact2Component } from './components/Contact/contact2.component';
 import { InvoiceComponent } from './components/Invoice/Invoice.component';
 import { AuthGuard } from './services/auth.service';
+import { CategoryListomponent } from './components/Category/categoryList.component';
+import { ProductListomponent } from './components/Product/productList.component';
 
 export const routes: Routes = [
     {
@@ -79,6 +81,14 @@ export const routes: Routes = [
         canActivate: [
             AuthGuard
         ]
+    },
+    {
+        path: 'category-list',
+        component: CategoryListomponent
+    },
+    {
+        path: 'product-list',
+        component: ProductListomponent
     },
     
 ];

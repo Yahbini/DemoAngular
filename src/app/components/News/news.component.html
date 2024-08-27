@@ -1,10 +1,19 @@
 <h3>News</h3>
+<!-- Từ ch truyền xuống con -->
 <child-component [id]="123" [title]="title" details="{{'aaaa'}}"></child-component>
 <br>
-<child2-component (updateFullname)="getDataFromChild($event)" updateCalculate="getCalculateFromChild($event)"></child2-component>
-<br>
+<!-- Từ con truyền lại cha -->
+<child2-component (updateFullname)="getDataFromChild($event)"
+    (updateCalculate)="getCalculateFromChild($event)"></child2-component>
+<br><br>
+
 Result: {{result}}
-<br>
+<br><br>
 Area: {{result2.area}}
 <br>
 Perimeter: {{result2.perimeter}}
+
+<br><br>
+
+<bro-component></bro-component>
+<bro2-component></bro2-component>
