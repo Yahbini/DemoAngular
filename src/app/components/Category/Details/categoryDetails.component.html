@@ -1,5 +1,13 @@
-<h3>Product List </h3>
+<h3>Details</h3>
 
+
+@if(category != null) {
+id: {{category.id}}
+<br>
+name: {{category.name}}
+}
+
+<h3>Product List </h3>
 @if(products != null) {
 <table border="1">
     <tr>
@@ -12,17 +20,7 @@
         <th>Created</th>
         <th>Photo</th>
         <th>CategoryId</th>
-        <th>CategoryName
-            <br>
-            <select (change)="filterByCategory($event)">
-                <option value="-1">All</option>
-                @if(categories != null) {
-                    @for(category of categories; track category) {
-                        <option value="{{category.id}}">{{category.name}}</option>
-                    }
-                }
-            </select>
-        </th>
+        <th>CategoryName</th>
 
     </tr>
     @for(product of products; track product) {
@@ -35,11 +33,7 @@
         <td>{{product.status}}</td>
         <td>{{product.created}}</td>
         <td>
-            <img 
-                *ngIf="product.photo" 
-                [src]="'images/' + (product.photo.split('/').pop())" 
-                width="120" height="120"
-            />
+            <img src="images/{{product.photo}}" width="120" height="120" />
         </td>
         <td>{{product.categoryId}}</td>
         <td>{{product.categoryName}}</td>

@@ -16,8 +16,16 @@ export class ProductAPIService {
   ) {}
 
   async findallProduct() {
-    return lastValueFrom(this.httpClient.get(
-      this.baseURLService.BASE_URL + '/product/findall'
-    ));
+    return lastValueFrom(
+      this.httpClient.get(this.baseURLService.BASE_URL + '/product/findall')
+    );
+  }
+
+  async findByCategoryId(categoryId: string) {
+    return lastValueFrom(
+      this.httpClient.get(
+        this.baseURLService.BASE_URL + '/product/findByCategory/' + categoryId
+      )
+    );
   }
 }

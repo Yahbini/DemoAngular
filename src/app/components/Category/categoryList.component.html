@@ -1,3 +1,14 @@
+<fieldset>
+    <legend>Search By Keyword</legend>
+    Keyword: <input type="text" [(ngModel)]="keyword">
+    <br>
+    <button type="button" (click)="search()">Search</button>
+</fieldset>
+<br>
+
+<a [routerLink]="['/add-category']">Add Category</a>
+
+<br>
 <h3>Category List </h3>
 
 @if(categories != null) {
@@ -5,11 +16,20 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Action</th>
+
         </tr>
         @for(category of categories; track category) {
         <tr>
             <td>{{category.id}}</td>
             <td>{{category.name}}</td>
+            <td>
+                <a [routerLink]="['/category-details', {id:category.id}]">
+                    Details
+                </a> | 
+                <button type="button" [routerLink]="['/category-edit', {id:category.id}]">Edit</button> |
+                <button type="button" (click)="delete(category.id)">Delete</button>
+            </td>
         </tr>
         }
 

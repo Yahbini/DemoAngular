@@ -1,0 +1,22 @@
+<h3>Edit Category</h3>
+
+@if(formGroup != null) {
+    <form [formGroup]="formGroup" (ngSubmit)="save()">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" formControlName="name">
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button type="submit">Save</button>
+                    <input type="hidden" formControlName="id">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+}

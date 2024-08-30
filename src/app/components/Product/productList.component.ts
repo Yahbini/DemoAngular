@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductAPI } from '../../entities/productapi.entity';
 import { ProductAPIService } from '../../services/productAPI.service';
 import { CommonModule } from '@angular/common';
+import { CategoryAPI } from '../../entities/categoryapi.entity';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +17,21 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class ProductListomponent implements OnInit {
-  products: ProductAPI[]
+  products: ProductAPI[];
+  categories: CategoryAPI[];
 
-  constructor(private productApiService: ProductAPIService) {}
+  constructor(private productApiService: ProductAPIService, private categoryService: CategoryService) {}
 
   ngOnInit() {
+    this.categoryService.findall().then(
+      res => {
+        this.categories = res as CategoryAPI[];
+      }, 
+      error => {
+        console.log(error);
+        
+      }
+    )
     this.productApiService.findallProduct().then(
         res => {
             this.products =  res as ProductAPI[];
@@ -29,5 +41,18 @@ export class ProductListomponent implements OnInit {
             
         }
     )
+  }
+
+  filterByCategory(evt: any) {
+    let categoryId = evt.target.value;
+    this.productApiService.findByCategoryId(categoryId).then(
+      res => {
+          this.products = res as ProductAPI[];
+      },error => {
+          console.log(error);
+          
+      }
+
+  )
   }
 }

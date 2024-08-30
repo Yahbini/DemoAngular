@@ -13,8 +13,11 @@ import { Contact1Component } from './components/Contact/contact1.component';
 import { Contact2Component } from './components/Contact/contact2.component';
 import { InvoiceComponent } from './components/Invoice/Invoice.component';
 import { AuthGuard } from './services/auth.service';
-import { CategoryListomponent } from './components/Category/categoryList.component';
 import { ProductListomponent } from './components/Product/productList.component';
+import { CategoryDetailsComponent } from './components/Category/Details/categoryDetails.component';
+import { CategoryAddomponent } from './components/Category/Add/categoryAdd.component';
+import { CategoryEditComponent } from './components/Category/Edit/categoryEdit.component';
+import { CategoryListComponent } from './components/Category/categoryList.component';
 
 export const routes: Routes = [
     {
@@ -84,11 +87,22 @@ export const routes: Routes = [
     },
     {
         path: 'category-list',
-        component: CategoryListomponent
+        component: CategoryListComponent
     },
     {
         path: 'product-list',
         component: ProductListomponent
     },
-    
+    {
+        path: 'category-details',
+        component: CategoryDetailsComponent
+    },
+    {
+        path: 'add-category',
+        component: CategoryAddomponent
+    },
+    {
+        path: 'category-edit',
+        component: CategoryEditComponent
+    }
 ];
